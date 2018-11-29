@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="904.0" style="-fx-background-color: #2E3348;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.FirstController">
+   <children>
+      <AnchorPane layoutY="142.0" prefHeight="501.0" prefWidth="904.0" style="-fx-background-color: #fafafa;">
+         <children>
+            <Button fx:id="loginSingInButton" layoutX="361.0" layoutY="297.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="182.0" style="-fx-background-color: #2E3348;" text="Login" textFill="WHITE">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Button>
+            <TextField fx:id="login_field" layoutX="296.0" layoutY="147.0" prefHeight="34.0" prefWidth="312.0" promptText="Login" style="-fx-border-color: silver; -fx-background-color: #fafafa; -fx-border-radius: 5;" />
+            <TextField fx:id="password_field" layoutX="296.0" layoutY="223.0" prefHeight="34.0" prefWidth="312.0" promptText="Hasło" style="-fx-border-color: silver; -fx-background-color: #fafafa; -fx-border-radius: 5;" />
+            <Label layoutX="293.0" layoutY="31.0" prefHeight="88.0" prefWidth="312.0" text="Autoryzacja" textFill="#808080">
+               <font>
+                  <Font size="60.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Label layoutX="361.0" layoutY="21.0" prefHeight="88.0" prefWidth="182.0" text="Nazwa" textFill="#ffe6e6">
+         <font>
+            <Font size="60.0" />
+         </font>
+      </Label>
+      <Button fx:id="registerSingUpButton" layoutX="664.0" layoutY="21.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="210.0" style="-fx-background-color: #F39C63;" text="Rejestracja">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
