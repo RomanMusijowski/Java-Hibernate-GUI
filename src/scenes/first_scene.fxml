@@ -11,7 +11,7 @@
    <children>
       <AnchorPane layoutY="142.0" prefHeight="501.0" prefWidth="904.0" style="-fx-background-color: #fafafa;">
          <children>
-            <Button fx:id="loginSingInButton" layoutX="361.0" layoutY="297.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="182.0" style="-fx-background-color: #2E3348;" text="Login" textFill="WHITE">
+            <Button fx:id="loginSingInButton" layoutX="361.0" layoutY="305.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="182.0" style="-fx-background-color: #2E3348;" text="Login" textFill="WHITE">
                <font>
                   <Font size="19.0" />
                </font>
@@ -23,6 +23,7 @@
                   <Font size="60.0" />
                </font>
             </Label>
+            <Label fx:id="first_lable" layoutX="296.0" layoutY="268.0" prefHeight="27.0" prefWidth="312.0" textFill="RED" />
          </children>
       </AnchorPane>
       <Label layoutX="361.0" layoutY="21.0" prefHeight="88.0" prefWidth="182.0" text="Nazwa" textFill="#ffe6e6">

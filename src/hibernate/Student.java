@@ -16,7 +16,7 @@ public class Student implements Serializable {
     private int studentId;
 
     @Column(name = "imie_studenta")
-    private String imie;
+    private String imie_studenta;
 
     @Column(name = "nazwisko_studenta")
     private String nazwisko;
@@ -24,12 +24,11 @@ public class Student implements Serializable {
     @Column(name = "nr_indeksu")
     private long nrIndeksu;
 
-    @OneToMany(mappedBy = "student")
-//    private List<Przedmioty> przedmioty;
-    private List<Telefon> telefony;
+    @ManyToMany
+    private List<Przedmioty> przedmioty;
 
-    public Student(String imie, String nazwisko, long nrIndeksu) {
-        this.imie = imie;
+    public Student(String imie_studenta, String nazwisko, long nrIndeksu) {
+        this.imie_studenta = imie_studenta;
         this.nazwisko = nazwisko;
         this.nrIndeksu = nrIndeksu;
     }
@@ -41,7 +40,7 @@ public class Student implements Serializable {
     public String toString() {
         return "Student{" +
                 "studentId=" + studentId +
-                ", imie='" + imie + '\'' +
+                ", imie='" + imie_studenta + '\'' +
                 ", nazwisko='" + nazwisko + '\'' +
                 ", nrIndeksu=" + nrIndeksu +
                 '}';
@@ -60,11 +59,11 @@ public class Student implements Serializable {
     }
 
     public String getImie() {
-        return imie;
+        return imie_studenta;
     }
 
     public void setImie(String imie) {
-        this.imie = imie;
+        this.imie_studenta = imie;
     }
 
     public String getNazwisko() {

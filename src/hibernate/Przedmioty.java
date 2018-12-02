@@ -11,7 +11,7 @@ import java.util.List;
  */
 
 @Entity
-@Table(name=" przedmioty")
+@Table(name="przedmioty")
 public class Przedmioty implements Serializable {
 
     private static final long SerialVersionUId = -300040L;
