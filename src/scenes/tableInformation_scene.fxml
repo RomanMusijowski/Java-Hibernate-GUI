@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="517.0" prefWidth="747.0" style="-fx-background-color: #2E3348;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.TableInfController">
+    <children>
+        <AnchorPane layoutY="97.0" prefHeight="420.0" prefWidth="747.0" style="-fx-background-color: white;">
+            <children>
+                <Label alignment="CENTER" layoutX="135.0" layoutY="73.0" prefHeight="34.0" prefWidth="100.0" text="Nazwa" textFill="#2e3348">
+                    <font>
+                        <Font size="19.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="bookInfName" layoutX="233.0" layoutY="73.0" prefHeight="34.0" prefWidth="282.0" promptText="name" style="-fx-border-color: silver; -fx-background-color: #fafafa; -fx-border-radius: 5;" />
+                <Label fx:id="first_lable" alignment="CENTER" layoutX="326.0" layoutY="273.0" prefHeight="27.0" prefWidth="241.0" textFill="#f50000" />
+            <TextField fx:id="bookInfStan" layoutX="233.0" layoutY="228.0" prefHeight="34.0" prefWidth="282.0" promptText="stan" style="-fx-border-color: silver; -fx-background-color: #fafafa; -fx-border-radius: 5;" />
+            <TextField fx:id="bookInfRok" layoutX="233.0" layoutY="176.0" prefHeight="34.0" prefWidth="282.0" promptText="rok" style="-fx-border-color: silver; -fx-background-color: #fafafa; -fx-border-radius: 5;" />
+            <TextField fx:id="bookInfAutor" layoutX="233.0" layoutY="127.0" prefHeight="34.0" prefWidth="282.0" promptText="autor" style="-fx-border-color: silver; -fx-background-color: #fafafa; -fx-border-radius: 5;" />
+            <Button fx:id="bookInfEdytowacButton" layoutX="292.0" layoutY="322.0" mnemonicParsing="false" onAction="#actionEdit" prefHeight="34.0" prefWidth="164.0" style="-fx-background-color: #d65e0d;" text="Edytuj" textFill="WHITE" />
+            <Label alignment="CENTER" layoutX="135.0" layoutY="127.0" prefHeight="34.0" prefWidth="100.0" text="Autor" textFill="#2e3348">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="126.0" layoutY="176.0" prefHeight="34.0" prefWidth="111.0" text="Rok" textFill="#2e3348">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="126.0" layoutY="228.0" prefHeight="34.0" prefWidth="111.0" text="Stan" textFill="#2e3348">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <Label fx:id="bookInfLable" alignment="CENTER" layoutX="271.0" layoutY="270.0" prefHeight="34.0" prefWidth="207.0" textFill="#fa0202">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            </children>
+        </AnchorPane>
+        <Label alignment="CENTER" layoutX="222.0" prefHeight="84.0" prefWidth="304.0" text="Edycja" textFill="WHITE">
+            <font>
+                <Font size="36.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>

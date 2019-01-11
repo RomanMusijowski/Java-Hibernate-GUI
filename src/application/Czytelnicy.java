@@ -1,16 +1,22 @@
 package application;
 
 
+import org.hibernate.annotations.Cascade;
+
 import javax.persistence.*;
+import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name = "Czytelnicy")
-public class Czytelnicy {
+public class Czytelnicy implements Serializable {
 
-    @Column(name = "id_czytelnika", unique = true)
+    private static final long SerialVersionUId = -300035L;
+
+    @Column(name = "id_czytelnika")
     @Id
     @GeneratedValue
-    private int id_czytelnika;
+    private long id_czytelnika;
 
     @Column(name = "name")
     private String name;
@@ -24,20 +30,33 @@ public class Czytelnicy {
     @Column(name = "email")
     private String email;
 
-    public Czytelnicy(String name, String last_name, String pesel, String email) {
+    @Column(name = "haslo")
+    private String haslo;
+
+    @OneToMany(mappedBy = "czytelnik",fetch = FetchType.LAZY, orphanRemoval = true)
+    @Cascade({org.hibernate.annotations.CascadeType.PERSIST})
+    private List<Wypozyczenia> wypozyczenia;
+
+    public Czytelnicy(String name, String last_name, String pesel, String email, String haslo) {
         this.name = name;
         this.last_name = last_name;
         this.pesel = pesel;
         this.email = email;
+        this.haslo = haslo;
     }
+
+
+
+
 
     public Czytelnicy(){}
 
-    public int getId_czytelnika() {
+
+    public long getId_czytelnika() {
         return id_czytelnika;
     }
 
-    public void setId_czytelnika(int id_czytelnika) {
+    public void setId_czytelnika(long id_czytelnika) {
         this.id_czytelnika = id_czytelnika;
     }
 
@@ -73,14 +92,19 @@ public class Czytelnicy {
         this.email = email;
     }
 
-    @Override
-    public String toString() {
-        return "Czytelnicy{" +
-                "id_czytelnika=" + id_czytelnika +
-                ", name='" + name + '\'' +
-                ", last_name='" + last_name + '\'' +
-                ", pesel='" + pesel + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+    public String getHaslo() {
+        return haslo;
+    }
+
+    public void setHaslo(String haslo) {
+        this.haslo = haslo;
+    }
+
+    public List<Wypozyczenia> getWypozyczenia() {
+        return wypozyczenia;
+    }
+
+    public void setWypozyczenia(List<Wypozyczenia> wypozyczenia) {
+        this.wypozyczenia = wypozyczenia;
     }
 }

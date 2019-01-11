@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="904.0" style="-fx-background-color: #2E3348;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PracownikController">
+    <children>
+      <Label fx:id="lable_name_user" alignment="CENTER" layoutX="225.0" layoutY="2.0" prefHeight="28.0" prefWidth="475.0" style="-fx-background-color: #2E3348;" text="Label" textFill="#d3d3d3">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <TabPane layoutY="88.0" prefHeight="449.0" prefWidth="925.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Książki">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="autorKsiazki_field" layoutX="14.0" layoutY="69.0" prefHeight="33.0" prefWidth="210.0" promptText="autor" style="-fx-border-color: silver; -fx-background-color: #fafafa; -fx-border-radius: 5;" />
+                        <TextField fx:id="rokKsiazki_field" layoutX="14.0" layoutY="117.0" prefHeight="33.0" prefWidth="210.0" promptText="rok wydania" style="-fx-border-color: silver; -fx-background-color: #fafafa; -fx-border-radius: 5;" />
+                        <TextField fx:id="nazwaKsiazki_field" layoutX="14.0" layoutY="20.0" prefHeight="33.0" prefWidth="210.0" promptText="nazwa" style="-fx-border-color: silver; -fx-background-color: #fafafa; -fx-border-radius: 5;" />
+                        <Button fx:id="szukac_ksiazke_button2" layoutX="37.0" layoutY="222.0" mnemonicParsing="false" onAction="#actionFindBook" prefHeight="34.0" prefWidth="164.0" style="-fx-background-color: #d65e0d;" text="Wyszukaj" textFill="WHITE" />
+                        <Button fx:id="dodac_ksiazke_button211" layoutX="135.0" layoutY="166.0" mnemonicParsing="false" onAction="#actionDodacKsiazke" prefHeight="34.0" prefWidth="66.0" style="-fx-background-color: #d65e0d;" text="Dodaj" textFill="WHITE" />
+                        <TableView fx:id="pracTabViewKsiazki" layoutX="237.0" layoutY="-3.0" prefHeight="417.0" prefWidth="688.0">
+                          <columns>
+                            <TableColumn fx:id="columnBookName" prefWidth="179.0" text="nazwa" />
+                              <TableColumn fx:id="columnBookAutor" prefWidth="257.0" text="autor" />
+                              <TableColumn fx:id="columnBookRok" prefWidth="110.0" text="rok" />
+                              <TableColumn fx:id="columnBookInf" prefWidth="90.0" text="edycja" />
+                              <TableColumn fx:id="columnBookDelete" prefWidth="50.0" />
+                          </columns>
+                        </TableView>
+                        <TextField fx:id="iloscKsiazek_field" layoutX="37.0" layoutY="166.0" prefHeight="33.0" prefWidth="52.0" promptText="ilość" style="-fx-border-color: silver; -fx-background-color: #fafafa; -fx-border-radius: 5;" />
+                        <Label fx:id="labelBookInf" layoutX="7.0" layoutY="323.0" prefHeight="48.0" prefWidth="224.0" textFill="RED" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Historia">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="historyImieCzytelnika" layoutX="128.0" layoutY="16.0" prefHeight="27.0" prefWidth="186.0" promptText="Imie" style="-fx-border-color: silver; -fx-background-color: #fafafa; -fx-border-radius: 5;" />
+                        <TextField fx:id="historyNazwiskoCzytelnika" layoutX="370.0" layoutY="16.0" prefHeight="27.0" prefWidth="186.0" promptText="Nazwisko" style="-fx-border-color: silver; -fx-background-color: #fafafa; -fx-border-radius: 5;" />
+                        <Button fx:id="historiaPracownik_szukac_button" layoutX="609.0" layoutY="15.0" mnemonicParsing="false" onAction="#actionFind_historie" prefHeight="34.0" prefWidth="164.0" style="-fx-background-color: #d65e0d;" text="Wyszukaj" textFill="WHITE" />
+                        <TableView fx:id="pracTableViewHistory" layoutY="68.0" prefHeight="344.0" prefWidth="925.0">
+                          <columns>
+                              <TableColumn fx:id="column_historyIdWyp" prefWidth="93.0" text="id wypoz" />
+                              <TableColumn fx:id="column_dataOdebrania" prefWidth="211.0" text="data odebrania" />
+                              <TableColumn fx:id="column_termin" prefWidth="149.0" text="termin" />
+                              <TableColumn fx:id="column_dataOddania" prefWidth="149.0" text="data zwrotu" />
+                              <TableColumn fx:id="column_historyAct" prefWidth="149.0" text="szczygóły" />
+                          </columns>
+                        </TableView>
+                        <Label fx:id="pracHistoryLabel" layoutX="85.0" layoutY="370.0" prefHeight="28.0" prefWidth="463.0" textFill="RED" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Wypożyczenia">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="pesel_czytelnika_field" layoutX="28.0" layoutY="124.0" prefHeight="33.0" prefWidth="224.0" promptText="pesel" style="-fx-border-color: silver; -fx-background-color: #fafafa; -fx-border-radius: 5;" />
+                        <TextField fx:id="name_czytelnika_field" layoutX="28.0" layoutY="25.0" prefHeight="33.0" prefWidth="224.0" promptText="imie" style="-fx-border-color: silver; -fx-background-color: #fafafa; -fx-border-radius: 5;" />
+                        <TextField fx:id="lastName_czytelnika_field" layoutX="29.0" layoutY="74.0" prefHeight="33.0" prefWidth="222.0" promptText="nazwisko" style="-fx-border-color: silver; -fx-background-color: #fafafa; -fx-border-radius: 5;" />
+                        <Label alignment="CENTER" layoutX="62.0" prefHeight="21.0" prefWidth="155.0" text="Czytelnik" textFill="#8d8a8a" />
+                        <TextField fx:id="wyporz_nazwaKsiazki_field" layoutX="410.0" layoutY="25.0" prefHeight="33.0" prefWidth="224.0" promptText="nazwa" style="-fx-border-color: silver; -fx-background-color: #fafafa; -fx-border-radius: 5;" />
+                        <TextField fx:id="wyporz_rokKsiazki_field" layoutX="410.0" layoutY="124.0" prefHeight="33.0" prefWidth="224.0" promptText="rok" style="-fx-border-color: silver; -fx-background-color: #fafafa; -fx-border-radius: 5;" />
+                        <Button fx:id="buttonWyporzSzukBook" layoutX="653.0" layoutY="122.0" mnemonicParsing="false" onAction="#actionFindBook" prefHeight="34.0" prefWidth="132.0" style="-fx-background-color: #d65e0d;" text="Wyszukaj" textFill="WHITE" />
+                        <TableView fx:id="tableWypozCzyt" layoutY="172.0" prefHeight="184.0" prefWidth="475.0">
+                          <columns>
+                            <TableColumn fx:id="tableWyporzPeselCzytelnika" prefWidth="160.0" text="Pesel" />
+                            <TableColumn fx:id="tableWyporzNameCzyt" prefWidth="97.0" text="Imie" />
+                              <TableColumn fx:id="tableWyporzLastNameCzyt" prefWidth="136.0" text="Nazwisko" />
+                              <TableColumn fx:id="tableWyporzActionCzyt" prefWidth="81.0" text="Wpisz" />
+                          </columns>
+                        </TableView>
+                        <Button fx:id="wyporz_wyporzKsiazke_button11" layoutX="690.0" layoutY="362.0" mnemonicParsing="false" onAction="#actionWydacKsiazke" prefHeight="34.0" prefWidth="221.0" style="-fx-background-color: #d65e0d;" text="Wypożycz" textFill="WHITE" />
+                        <Label alignment="CENTER" layoutX="386.0" prefHeight="21.0" prefWidth="155.0" text="Książka" textFill="#8d8a8a" />
+                        <Label alignment="CENTER" layoutX="722.0" prefHeight="21.0" prefWidth="155.0" text="Termin oddania" textFill="#8d8a8a" />
+                        <TableView fx:id="tableWypozKsiazki" layoutX="475.0" layoutY="172.0" prefHeight="184.0" prefWidth="454.0">
+                          <columns>
+                            <TableColumn fx:id="tableWyporzIdNameBook" prefWidth="197.0" text="Nazwa" />
+                            <TableColumn fx:id="tableWyporzAutorBook" prefWidth="125.0" text="Autor" />
+                              <TableColumn fx:id="tableWyporzRokBook" prefWidth="59.0" text="Rok" />
+                              <TableColumn fx:id="tableWyporzActionBook" prefWidth="72.0" text="Wpisz" />
+                          </columns>
+                        </TableView>
+                        <Label fx:id="labelWypozSuccessful" layoutX="464.0" layoutY="362.0" prefHeight="34.0" prefWidth="189.0" textFill="LIME">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="labelWypozCzytelnik" layoutX="262.0" layoutY="31.0" prefHeight="21.0" prefWidth="96.0" textFill="RED" />
+                        <Label fx:id="labelWypozBook" layoutX="653.0" layoutY="79.0" prefHeight="21.0" prefWidth="246.0" textFill="RED" />
+                        <Button fx:id="buttonWyporzSzukCzyt" layoutX="268.0" layoutY="123.0" mnemonicParsing="false" onAction="#actionFindCzytelnik" prefHeight="34.0" prefWidth="132.0" style="-fx-background-color: #d65e0d;" text="Wyszukaj" textFill="WHITE" />
+                        <TextField fx:id="wyporz_autorKsiazki_field1" layoutX="410.0" layoutY="73.0" prefHeight="33.0" prefWidth="224.0" promptText="autor" style="-fx-border-color: silver; -fx-background-color: #fafafa; -fx-border-radius: 5;" />
+                        <Label fx:id="labelWypozData" layoutX="795.0" layoutY="130.0" prefHeight="21.0" prefWidth="116.0" textFill="RED" />
+                        <DatePicker fx:id="wyporz_terminOddania" layoutX="676.0" layoutY="26.0" promptText="dd/MM/yyyy" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Dane osobowe">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="osobaPesel" layoutX="250.0" layoutY="162.0" prefHeight="33.0" prefWidth="224.0" promptText="pesel" style="-fx-border-color: silver; -fx-background-color: #fafafa; -fx-border-radius: 5;" />
+                        <TextField fx:id="osobaName" layoutX="250.0" layoutY="15.0" prefHeight="33.0" prefWidth="224.0" promptText="imie" style="-fx-border-color: silver; -fx-background-color: #fafafa; -fx-border-radius: 5;" />
+                        <TextField fx:id="osobaLastname" layoutX="251.0" layoutY="63.0" prefHeight="33.0" prefWidth="222.0" promptText="nazwisko" style="-fx-border-color: silver; -fx-background-color: #fafafa; -fx-border-radius: 5;" />
+                        <Button fx:id="buttonOsobaUsunac" layoutX="781.0" layoutY="79.0" mnemonicParsing="false" onAction="#actionOsobaUsunac" prefHeight="34.0" prefWidth="132.0" style="-fx-background-color: #d65e0d;" text="Usuń" textFill="WHITE" />
+                        <TableView fx:id="tableOsobaCzytelniki" layoutY="218.0" prefHeight="192.0" prefWidth="484.0">
+                           <columns>
+                              <TableColumn fx:id="tableOsobaPesel" prefWidth="155.0" text="Pesel" />
+                              <TableColumn fx:id="tableOsobaImie" prefWidth="115.0" text="Imie" />
+                              <TableColumn fx:id="tableOsobaNazwisko" prefWidth="137.0" text="Nazwisko" />
+                              <TableColumn fx:id="tableOsobaButton" prefWidth="77.0" text="Wpisz" />
+                           </columns>
+                        </TableView>
+                        <Label fx:id="labelWypozSuccessful1" layoutX="464.0" layoutY="362.0" prefHeight="34.0" prefWidth="189.0" textFill="LIME">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="labelWypozCzytelnik1" layoutX="262.0" layoutY="31.0" prefHeight="21.0" prefWidth="96.0" textFill="RED" />
+                        <Button fx:id="buttonOsobaPracownikZnalezc" layoutX="763.0" layoutY="178.0" mnemonicParsing="false" onAction="#actionOsobaPracownikZnalezc" prefHeight="34.0" prefWidth="150.0" style="-fx-background-color: #d65e0d;" text="Wyszukaj pracownika" textFill="WHITE" />
+                        <TextField fx:id="osobaEmail" layoutX="250.0" layoutY="112.0" prefHeight="33.0" prefWidth="224.0" promptText="email" style="-fx-border-color: silver; -fx-background-color: #fafafa; -fx-border-radius: 5;" />
+                        <TableView fx:id="tableOsobaPracowniki" layoutX="484.0" layoutY="218.0" prefHeight="192.0" prefWidth="442.0">
+                           <columns>
+                              <TableColumn fx:id="tableOsobaPracownikPesel" prefWidth="135.0" text="Pesel" />
+                              <TableColumn fx:id="tableOsobaPracownikImie" prefWidth="121.0" text="Imie" />
+                              <TableColumn fx:id="tableOsobaPracownikNazwisko" prefWidth="129.0" text="Nazwisko" />
+                              <TableColumn fx:id="tableOsobaPracownikButton" prefWidth="56.0" text="Wpisz" />
+                           </columns>
+                        </TableView>
+                        <Button fx:id="buttonOsobaZnalezc" layoutX="14.0" layoutY="178.0" mnemonicParsing="false" onAction="#actionFindCzytelnik" prefHeight="34.0" prefWidth="119.0" style="-fx-background-color: #d65e0d;" text="Wyszukaj czytelnika" textFill="WHITE" />
+                        <Button fx:id="buttonOsobaZmienic" layoutX="781.0" layoutY="128.0" mnemonicParsing="false" onAction="#actionOsobaEdytowac" prefHeight="34.0" prefWidth="132.0" style="-fx-background-color: #d65e0d;" text="Edytuj" textFill="WHITE" />
+                        <Label fx:id="labelOsobaInform" layoutX="369.0" layoutY="195.0" prefHeight="21.0" prefWidth="231.0" textFill="RED" />
+                        <TextField fx:id="osobaNameNew" layoutX="492.0" layoutY="15.0" prefHeight="33.0" prefWidth="224.0" promptText="nowe imie" style="-fx-border-color: silver; -fx-background-color: #fafafa; -fx-border-radius: 5;" />
+                        <TextField fx:id="osobaLastnameNew" layoutX="493.0" layoutY="63.0" prefHeight="33.0" prefWidth="222.0" promptText="nowe nazwisko" style="-fx-border-color: silver; -fx-background-color: #fafafa; -fx-border-radius: 5;" />
+                        <TextField fx:id="osobaEmailNew" layoutX="492.0" layoutY="112.0" prefHeight="33.0" prefWidth="224.0" promptText="nowy email" style="-fx-border-color: silver; -fx-background-color: #fafafa; -fx-border-radius: 5;" />
+                        <TextField fx:id="osobaPeselNew" layoutX="492.0" layoutY="162.0" prefHeight="33.0" prefWidth="224.0" promptText="nowy pesel" style="-fx-border-color: silver; -fx-background-color: #fafafa; -fx-border-radius: 5;" />
+                        <TextField fx:id="osobaType" layoutX="144.0" layoutY="179.0" prefHeight="0.0" prefWidth="94.0" promptText="typ" style="-fx-border-color: silver; -fx-background-color: #fafafa; -fx-border-radius: 5;" />
+                        <ImageView fitHeight="161.0" fitWidth="205.0" layoutX="42.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Sketch.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <Button fx:id="logOutButton" layoutX="828.0" layoutY="13.0" mnemonicParsing="false" onAction="#actionLogOutButton" prefHeight="34.0" prefWidth="83.0" style="-fx-background-color: #d65e0d;" text="Wyloguj" textFill="WHITE" />
+    </children>
+</AnchorPane>

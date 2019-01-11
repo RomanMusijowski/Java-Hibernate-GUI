@@ -7,34 +7,26 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="500.0" prefWidth="904.0" style="-fx-background-color: #2E3348;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.FirstController">
+<AnchorPane prefHeight="500.0" prefWidth="904.0" style="-fx-background-color: #2E3348;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.FirstController">
    <children>
-      <AnchorPane layoutY="142.0" prefHeight="501.0" prefWidth="904.0" style="-fx-background-color: #fafafa;">
+      <AnchorPane layoutY="94.0" prefHeight="500.0" prefWidth="904.0" style="-fx-background-color: white;">
          <children>
-            <Button fx:id="loginSingInButton" layoutX="361.0" layoutY="305.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="182.0" style="-fx-background-color: #2E3348;" text="Login" textFill="WHITE">
+            <Label alignment="CENTER" layoutX="300.0" layoutY="96.0" prefHeight="46.0" prefWidth="304.0" text="Logowanie" textFill="#2e3348">
                <font>
-                  <Font size="19.0" />
-               </font>
-            </Button>
-            <TextField fx:id="login_field" layoutX="296.0" layoutY="147.0" prefHeight="34.0" prefWidth="312.0" promptText="Login" style="-fx-border-color: silver; -fx-background-color: #fafafa; -fx-border-radius: 5;" />
-            <TextField fx:id="password_field" layoutX="296.0" layoutY="223.0" prefHeight="34.0" prefWidth="312.0" promptText="Hasło" style="-fx-border-color: silver; -fx-background-color: #fafafa; -fx-border-radius: 5;" />
-            <Label layoutX="293.0" layoutY="31.0" prefHeight="88.0" prefWidth="312.0" text="Autoryzacja" textFill="#808080">
-               <font>
-                  <Font size="60.0" />
+                  <Font size="35.0" />
                </font>
             </Label>
-            <Label fx:id="first_lable" layoutX="296.0" layoutY="268.0" prefHeight="27.0" prefWidth="312.0" textFill="RED" />
+            <TextField fx:id="login_field" alignment="CENTER" layoutX="290.0" layoutY="174.0" prefHeight="34.0" prefWidth="312.0" promptText="email" style="-fx-border-color: silver; -fx-background-color: #fafafa; -fx-border-radius: 5;" />
+            <Button fx:id="loginSingInButton" layoutX="405.0" layoutY="305.0" mnemonicParsing="false" onAction="#actionLogIn" prefHeight="34.0" prefWidth="83.0" style="-fx-background-color: #d65e0d;" text="Zaloguj" textFill="WHITE" />
+            <Label fx:id="first_lable" alignment="CENTER" layoutX="326.0" layoutY="273.0" prefHeight="27.0" prefWidth="241.0" textFill="#f50000" />
+            <PasswordField fx:id="password_field" alignment="CENTER" layoutX="292.0" layoutY="235.0" prefHeight="31.0" prefWidth="312.0" promptText="hasło" style="-fx-border-color: silver; -fx-background-color: #fafafa; -fx-border-radius: 5;" />
          </children>
       </AnchorPane>
-      <Label layoutX="361.0" layoutY="21.0" prefHeight="88.0" prefWidth="182.0" text="Nazwa" textFill="#ffe6e6">
+      <Label alignment="CENTER" layoutX="300.0" layoutY="8.0" prefHeight="92.0" prefWidth="304.0" text="Biblioteka" textFill="WHITE">
          <font>
-            <Font size="60.0" />
+            <Font size="63.0" />
          </font>
       </Label>
-      <Button fx:id="registerSingUpButton" layoutX="664.0" layoutY="21.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="210.0" style="-fx-background-color: #F39C63;" text="Rejestracja">
-         <font>
-            <Font size="19.0" />
-         </font>
-      </Button>
+      <Button fx:id="registerSingUpButton" layoutX="718.0" layoutY="20.0" mnemonicParsing="false" onAction="#actionLogUp" prefHeight="34.0" prefWidth="164.0" style="-fx-background-color: #d65e0d;" text="Rejestracja" textFill="WHITE" />
    </children>
 </AnchorPane>

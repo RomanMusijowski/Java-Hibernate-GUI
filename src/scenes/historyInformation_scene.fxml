@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="517.0" prefWidth="778.0" style="-fx-background-color: #2E3348;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.HistoryInfController">
+    <children>
+        <AnchorPane layoutY="97.0" prefHeight="420.0" prefWidth="747.0" style="-fx-background-color: white;">
+            <children>
+                <Label alignment="CENTER" layoutX="373.0" layoutY="76.0" prefHeight="34.0" prefWidth="87.0" text="Prac. naz." textFill="#2e3348">
+                    <font>
+                        <Font size="19.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="personLastName" layoutX="458.0" layoutY="31.0" prefHeight="34.0" prefWidth="219.0" promptText="lastName" style="-fx-border-color: silver; -fx-background-color: #fafafa; -fx-border-radius: 5;" />
+                <Label fx:id="first_lable" alignment="CENTER" layoutX="326.0" layoutY="273.0" prefHeight="27.0" prefWidth="241.0" textFill="#f50000" />
+                <Button fx:id="bookInfDeleteButton" layoutX="553.0" layoutY="372.0" mnemonicParsing="false" onAction="#actionTake" prefHeight="34.0" prefWidth="164.0" style="-fx-background-color: #d65e0d;" text="Zwrot książki" textFill="WHITE" />
+                <Button fx:id="bookInfEdytowacButton" layoutX="340.0" layoutY="372.0" mnemonicParsing="false" onAction="#actionExtend" prefHeight="34.0" prefWidth="164.0" style="-fx-background-color: #d65e0d;" text="Przedłuż" textFill="WHITE" />
+                <Label alignment="CENTER" layoutX="397.0" layoutY="142.0" prefHeight="34.0" prefWidth="62.0" text="Autor" textFill="#2e3348">
+                    <font>
+                        <Font size="19.0" />
+                    </font>
+                </Label>
+                <Label alignment="CENTER" layoutX="52.0" layoutY="193.0" prefHeight="34.0" prefWidth="50.0" text="Rok" textFill="#2e3348">
+                    <font>
+                        <Font size="19.0" />
+                    </font>
+                </Label>
+                <Label alignment="CENTER" layoutX="397.0" layoutY="193.0" prefHeight="34.0" prefWidth="62.0" text="Stan" textFill="#2e3348">
+                    <font>
+                        <Font size="19.0" />
+                    </font>
+                </Label>
+            <TextField fx:id="personName" layoutX="102.0" layoutY="31.0" prefHeight="34.0" prefWidth="219.0" promptText="name" style="-fx-border-color: silver; -fx-background-color: #fafafa; -fx-border-radius: 5;" />
+            <Label alignment="CENTER" layoutX="50.0" layoutY="31.0" prefHeight="34.0" prefWidth="50.0" text="Imie" textFill="#2e3348">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="373.0" layoutY="31.0" prefHeight="34.0" prefWidth="87.0" text="Nazwisko" textFill="#2e3348">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <TextField fx:id="employeeName" layoutX="102.0" layoutY="76.0" prefHeight="34.0" prefWidth="219.0" promptText="login" style="-fx-border-color: silver; -fx-background-color: #fafafa; -fx-border-radius: 5;" />
+            <TextField fx:id="employeeLastName" layoutX="458.0" layoutY="76.0" prefHeight="34.0" prefWidth="219.0" promptText="login" style="-fx-border-color: silver; -fx-background-color: #fafafa; -fx-border-radius: 5;" />
+            <Label alignment="CENTER" layoutX="14.0" layoutY="76.0" prefHeight="34.0" prefWidth="87.0" text="Prac. imie" textFill="#2e3348">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <TextField fx:id="boookName" layoutX="102.0" layoutY="142.0" prefHeight="34.0" prefWidth="219.0" promptText="login" style="-fx-border-color: silver; -fx-background-color: #fafafa; -fx-border-radius: 5;" />
+            <TextField fx:id="bookAuthor" layoutX="458.0" layoutY="142.0" prefHeight="34.0" prefWidth="219.0" promptText="login" style="-fx-border-color: silver; -fx-background-color: #fafafa; -fx-border-radius: 5;" />
+            <TextField fx:id="bookYear" layoutX="102.0" layoutY="193.0" prefHeight="34.0" prefWidth="219.0" promptText="login" style="-fx-border-color: silver; -fx-background-color: #fafafa; -fx-border-radius: 5;" />
+            <TextField fx:id="bookState" layoutX="458.0" layoutY="193.0" prefHeight="34.0" prefWidth="219.0" promptText="login" style="-fx-border-color: silver; -fx-background-color: #fafafa; -fx-border-radius: 5;" />
+            <TextField fx:id="dateForGive" layoutX="458.0" layoutY="256.0" prefHeight="34.0" prefWidth="219.0" promptText="login" style="-fx-border-color: silver; -fx-background-color: #fafafa; -fx-border-radius: 5;" />
+            <Label alignment="CENTER" layoutX="39.0" layoutY="142.0" prefHeight="34.0" prefWidth="62.0" text="Nazwa" textFill="#2e3348">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="677.0" layoutY="31.0" prefHeight="34.0" prefWidth="87.0" text="Czytelnik" textFill="#2e3348">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="679.0" layoutY="73.0" prefHeight="34.0" prefWidth="93.0" text="Pracownik" textFill="#2e3348">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="683.0" layoutY="142.0" prefHeight="34.0" prefWidth="62.0" text="Książka" textFill="#2e3348">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="684.0" layoutY="256.0" prefHeight="34.0" prefWidth="50.0" text="Data" textFill="#2e3348">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <TextField fx:id="dateOfTaken" layoutX="102.0" layoutY="256.0" prefHeight="34.0" prefWidth="219.0" promptText="login" style="-fx-border-color: silver; -fx-background-color: #fafafa; -fx-border-radius: 5;" />
+            <Label alignment="CENTER" layoutX="21.0" layoutY="256.0" prefHeight="34.0" prefWidth="81.0" text="Wydana" textFill="#2e3348">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="388.0" layoutY="256.0" prefHeight="34.0" prefWidth="72.0" text="Termin" textFill="#2e3348">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <TextField fx:id="dateOfGiven" layoutX="458.0" layoutY="307.0" prefHeight="34.0" prefWidth="219.0" promptText="login" style="-fx-border-color: silver; -fx-background-color: #fafafa; -fx-border-radius: 5;" />
+            <Label alignment="CENTER" layoutX="397.0" layoutY="307.0" prefHeight="34.0" prefWidth="62.0" text="stan" textFill="#2e3348">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelAfterAction" alignment="CENTER" layoutX="46.0" layoutY="372.0" prefHeight="34.0" prefWidth="241.0" text="edit termin" textFill="#f53e3e">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            </children>
+        </AnchorPane>
+        <Label alignment="CENTER" layoutX="222.0" prefHeight="84.0" prefWidth="304.0" text="Szczegóły" textFill="WHITE">
+            <font>
+                <Font size="36.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>
